@@ -34750,13 +34750,13 @@ var authGuard = () => {
 var routes = [
   {
     path: "quote",
-    loadComponent: () => import("./chunk-ISQJKFLX.js").then((m) => m.QuotesContainerComponent),
+    loadComponent: () => import("./chunk-BDNQOCFC.js").then((m) => m.QuotesContainerComponent),
     canActivate: [authGuard],
     title: "Quote"
   },
   {
     path: "settings",
-    loadComponent: () => import("./chunk-BQCZ2PXZ.js").then((m) => m.FieldsListComponent),
+    loadComponent: () => import("./chunk-7GRFBLX2.js").then((m) => m.FieldsListComponent),
     title: "Settings"
   },
   {
@@ -34775,7 +34775,7 @@ var routes = [
 // src/environments/environment.ts
 var environment = {
   production: false,
-  baseUrl: "http://localhost:3000",
+  baseUrl: "http://15.160.193.184:3000",
   name: "dev environment",
   code: 1001
 };
@@ -35277,4 +35277,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-NTWI7DP6.js.map
+//# sourceMappingURL=chunk-2IE7US3Z.js.map

@@ -22,7 +22,7 @@ import {
   ɵɵqueryRefresh,
   ɵɵtemplate,
   ɵɵviewQuery
-} from "./chunk-NTWI7DP6.js";
+} from "./chunk-2IE7US3Z.js";
 
 // src/app/shared/component/loading/loading.component.ts
 var _LoadingComponent = class _LoadingComponent {
@@ -193,4 +193,4 @@ var QuotesContainerComponent = _QuotesContainerComponent;
 export {
   QuotesContainerComponent
 };
-//# sourceMappingURL=chunk-ISQJKFLX.js.map
+//# sourceMappingURL=chunk-BDNQOCFC.js.map
