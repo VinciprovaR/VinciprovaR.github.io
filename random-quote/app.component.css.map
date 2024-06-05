@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/app.component.css"],
+  "sourcesContent": [".bg-custom {\r\n  background-image: url(\"../assets/Upscaled_Latest_Image.png\");\r\n}\r\n\r\n.bg-gradient-custom {\r\n  background-image: linear-gradient(#44576b, #010d19);\r\n}\r\n"],
+  "mappings": ";AAAA,CAAC;AACC,oBAAkB;AACpB;AAEA,CAAC;AACC,oBAAkB,gBAAgB,OAAhB,EAAyB;AAC7C;",
+  "names": []
+}

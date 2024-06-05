@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/shared/layout/header/C:/Users/vinci/Desktop/Portfolio/projects-showcase/random-quote/stack/random-quote-client/src/app/shared/layout/header/header.component.less"],
+  "sourcesContent": [".header {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  z-index: 10000;\n  height: auto;\n}\nul {\n  list-style-type: none;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,YAAA;AACA,OAAA;AACA,QAAA;AACA,SAAA;AACA,WAAA;AACA,UAAA;;AAEF;AACE,mBAAA;;",
+  "names": []
+}

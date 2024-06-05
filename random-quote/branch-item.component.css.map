@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/branch-item/branch-item.component.css"],
+  "sourcesContent": ["/* .ant-tag-checkable {\r\n  border-color: rgb(0, 0, 0);\r\n  border-radius: 40px;\r\n  border-style: solid;\r\n} */\r\n.led-light {\r\n  width: 50px;\r\n  height: 50px;\r\n  border-radius: 50%;\r\n  transition: all 0.3s ease;\r\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n.led-light-off {\r\n  box-shadow: 0 0 10px #6b7280; /* Dim gray glow */\r\n}\r\n\r\n.tag-button-selected {\r\n  box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39); /* Bright blue glow */\r\n}\r\n\r\n.tag-button-deselected {\r\n  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */\r\n}\r\n"],
+  "mappings": ";AAKA,CAAC;AACC,SAAO;AACP,UAAQ;AACR,iBAAe;AACf,cAAY,IAAI,KAAK;AACrB,cAAY,EAAE,EAAE,KAAK,KAAK,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE;AACrC;AAEA,CAAC;AACC,cAAY,EAAE,EAAE,KAAK;AACvB;AAEA,CAAC;AACC,cAAY,EAAE,IAAI,KAAK,EAAE,KAAK,CAAC,EAAE,GAAG,EAAE,GAAG,EAAE;AAC7C;AAEA,CAAC;AACC,cAAY,EAAE,IAAI,IAAI,EAAE,KAAK,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE;AACxC;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/quotes-container/C:/Users/vinci/Desktop/Portfolio/projects-showcase/random-quote/stack/random-quote-client/src/app/features/quotes-container/quotes-container.component.less"],
+  "sourcesContent": [".spinner-border {\n  border-color: transparent;\n  border-top-color: #3490dc; /* blue */\n}\n\nswiper-container::part(container) {\n  padding-bottom: 35px;\n}\n\nswiper-container::part(pagination) {\n  display: none;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,gBAAA;AACA,oBAAA;;AAGF,gBAAgB,OAAM;AACpB,kBAAA;;AAGF,gBAAgB,OAAM;AACpB,WAAA;;",
+  "names": []
+}
