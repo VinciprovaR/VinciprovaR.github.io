@@ -22,7 +22,7 @@ import {
   ɵɵqueryRefresh,
   ɵɵtemplate,
   ɵɵviewQuery
-} from "./chunk-KFZSZCO6.js";
+} from "./chunk-YSZ5BFRA.js";
 
 // src/app/shared/component/loading/loading.component.ts
 var _LoadingComponent = class _LoadingComponent {
@@ -56,10 +56,23 @@ var _QuotesService = class _QuotesService {
     return this.webStorageService.getBranches();
   }
   //to-do refractor get quotes
-  getQuote(numQuotes) {
-    return this.http.post(`${this.baseUrl}/quote`, {
-      branchesSelected: this.getBranchesSelected(),
-      numQuotes
+  getInitQuote() {
+    return this.http.post(`${this.baseUrl}/initQuote`, {
+      branchesSelected: this.getBranchesSelected()
+    }).pipe(map((quote) => {
+      return quote;
+    }));
+  }
+  getAdditionalQuote() {
+    return this.http.post(`${this.baseUrl}/additionalQuote`, {
+      branchesSelected: this.getBranchesSelected()
+    }).pipe(map((quote) => {
+      return quote;
+    }));
+  }
+  getSingleQuote() {
+    return this.http.post(`${this.baseUrl}/singleQuote`, {
+      branchesSelected: this.getBranchesSelected()
     }).pipe(map((quote) => {
       return quote;
     }));
@@ -90,6 +103,7 @@ var _QuotesContainerComponent = class _QuotesContainerComponent {
     this.isLoading = true;
     this.isAddLoading = false;
     this.showAddLoading = false;
+    this.tryAgainQuoteActive = false;
     this.INIT_QUOTE_NUM = 4;
     this.ADD_QUOTE_NUM = 2;
     this.MAX_QUOTE_NUM = 20;
@@ -108,53 +122,59 @@ var _QuotesContainerComponent = class _QuotesContainerComponent {
     this.initQuote();
   }
   initQuote() {
-    this.getQuote(this.INIT_QUOTE_NUM);
+    this.quotesService.getInitQuote().subscribe((quotes) => {
+      this.renderSwiper(quotes);
+    });
   }
   additionalQuote() {
     this.isAddLoading = true;
-    this.getQuote(this.ADD_QUOTE_NUM);
+    this.quotesService.getAdditionalQuote().subscribe((quotes) => {
+      this.renderSwiper(quotes);
+    });
+  }
+  tryAgainQuote() {
+    this.quotesService.getSingleQuote().subscribe((quotes) => {
+      this.renderSwiper(quotes, true);
+    });
   }
   handleCapSlide() {
     if (this.swiperRef.nativeElement.swiper.slides.length >= this.MAX_QUOTE_NUM) {
       this.swiperRef.nativeElement.swiper.removeSlide([0, 1]);
     }
   }
-  //handle error
-  getQuote(numQuotes, isTryingAgain = false) {
-    this.quotesService.getQuote(numQuotes).subscribe((quotes) => {
-      quotes.forEach((quote) => {
-        try {
-          let quoteContent = JSON.parse(quote.content);
-          this.swiperRef.nativeElement.swiper.appendSlide(`<swiper-slide>
-            <div id="quote-content" class="card mx-2 text-white">
-              <div class="card-body">
-              <blockquote
-              class="max-w-4xl mx-auto p-6 text-center italic rounded-lg cursor-pointer "
-            >
+  renderSwiper(quotes, isTryingAgain = false) {
+    quotes.forEach((quote) => {
+      try {
+        let quoteContent = JSON.parse(quote.content);
+        this.swiperRef.nativeElement.swiper.appendSlide(`<swiper-slide>
+          <div id="quote-content" class="card mx-2 text-white">
+            <div class="card-body">
+            <blockquote
+            class="max-w-4xl mx-auto p-6 text-center italic rounded-lg cursor-pointer "
+          >
 
-              <p class="text-lg sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl  ">
-              ${quoteContent.quote} 
-              </p>
-                    <cite class="not-italic font-normal text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl"
-                >~ ${quoteContent.exponent || quoteContent.character} ${quoteContent.opera?.length > 0 ? ` from ${quoteContent.opera}` : ``} ~</cite>
-              
-            </blockquote>
+            <p class="text-lg sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl  ">
+            ${quoteContent.quote} 
+            </p>
+                  <cite class="not-italic font-normal text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl"
+              >~ ${quoteContent.exponent || quoteContent.character} ${quoteContent.opera?.length > 0 ? ` from ${quoteContent.opera}` : ``} ~</cite>
             
-              </div>
+          </blockquote>
+          
             </div>
-          </swiper-slide>`);
-        } catch (error) {
-          console.error(error);
-          if (!isTryingAgain) {
-            this.getQuote(1, true);
-          }
+          </div>
+        </swiper-slide>`);
+      } catch (error) {
+        console.error(error);
+        if (!isTryingAgain && this.tryAgainQuoteActive) {
+          this.tryAgainQuote();
         }
-      });
-      this.handleCapSlide();
-      this.isLoading = false;
-      this.isAddLoading = false;
-      this.showAddLoading = false;
+      }
     });
+    this.handleCapSlide();
+    this.isLoading = false;
+    this.isAddLoading = false;
+    this.showAddLoading = false;
   }
 };
 _QuotesContainerComponent.\u0275fac = function QuotesContainerComponent_Factory(t) {
@@ -193,4 +213,4 @@ var QuotesContainerComponent = _QuotesContainerComponent;
 export {
   QuotesContainerComponent
 };
-//# sourceMappingURL=chunk-HZAWQCWU.js.map
+//# sourceMappingURL=chunk-RDUAWSLD.js.map
