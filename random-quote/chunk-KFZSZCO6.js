@@ -34750,13 +34750,13 @@ var authGuard = () => {
 var routes = [
   {
     path: "quote",
-    loadComponent: () => import("./chunk-BDNQOCFC.js").then((m) => m.QuotesContainerComponent),
+    loadComponent: () => import("./chunk-HZAWQCWU.js").then((m) => m.QuotesContainerComponent),
     canActivate: [authGuard],
     title: "Quote"
   },
   {
     path: "settings",
-    loadComponent: () => import("./chunk-7GRFBLX2.js").then((m) => m.FieldsListComponent),
+    loadComponent: () => import("./chunk-U5Z2TUVQ.js").then((m) => m.FieldsListComponent),
     title: "Settings"
   },
   {
@@ -34775,9 +34775,9 @@ var routes = [
 // src/environments/environment.ts
 var environment = {
   production: false,
-  baseUrl: "http://15.160.193.184:3000",
+  baseUrl: "https://random-quote-server.onrender.com",
   name: "dev environment",
-  code: 1001
+  code: 1002
 };
 
 // node_modules/@ant-design/icons-angular/fesm2022/ant-design-icons-angular-icons.mjs
@@ -35277,4 +35277,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-2IE7US3Z.js.map
+//# sourceMappingURL=chunk-KFZSZCO6.js.map
