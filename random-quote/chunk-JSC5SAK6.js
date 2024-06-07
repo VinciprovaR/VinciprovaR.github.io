@@ -34750,13 +34750,13 @@ var authGuard = () => {
 var routes = [
   {
     path: "quote",
-    loadComponent: () => import("./chunk-RDUAWSLD.js").then((m) => m.QuotesContainerComponent),
+    loadComponent: () => import("./chunk-FSFEVQLQ.js").then((m) => m.QuotesContainerComponent),
     canActivate: [authGuard],
     title: "Quote"
   },
   {
     path: "settings",
-    loadComponent: () => import("./chunk-TURMFQJX.js").then((m) => m.FieldsListComponent),
+    loadComponent: () => import("./chunk-UOAFXJZU.js").then((m) => m.FieldsListComponent),
     title: "Settings"
   },
   {
@@ -35277,4 +35277,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-YSZ5BFRA.js.map
+//# sourceMappingURL=chunk-JSC5SAK6.js.map

@@ -22,7 +22,7 @@ import {
   ɵɵqueryRefresh,
   ɵɵtemplate,
   ɵɵviewQuery
-} from "./chunk-YSZ5BFRA.js";
+} from "./chunk-JSC5SAK6.js";
 
 // src/app/shared/component/loading/loading.component.ts
 var _LoadingComponent = class _LoadingComponent {
@@ -143,9 +143,9 @@ var _QuotesContainerComponent = class _QuotesContainerComponent {
     }
   }
   renderSwiper(quotes, isTryingAgain = false) {
-    quotes.forEach((quote) => {
-      try {
-        let quoteContent = JSON.parse(quote.content);
+    try {
+      let quoteContentList = JSON.parse(quotes.result);
+      quoteContentList.forEach((quoteContent) => {
         this.swiperRef.nativeElement.swiper.appendSlide(`<swiper-slide>
           <div id="quote-content" class="card mx-2 text-white">
             <div class="card-body">
@@ -164,13 +164,13 @@ var _QuotesContainerComponent = class _QuotesContainerComponent {
             </div>
           </div>
         </swiper-slide>`);
-      } catch (error) {
-        console.error(error);
-        if (!isTryingAgain && this.tryAgainQuoteActive) {
-          this.tryAgainQuote();
-        }
+      });
+    } catch (error) {
+      console.error(error);
+      if (!isTryingAgain && this.tryAgainQuoteActive) {
+        this.tryAgainQuote();
       }
-    });
+    }
     this.handleCapSlide();
     this.isLoading = false;
     this.isAddLoading = false;
@@ -213,4 +213,4 @@ var QuotesContainerComponent = _QuotesContainerComponent;
 export {
   QuotesContainerComponent
 };
-//# sourceMappingURL=chunk-RDUAWSLD.js.map
+//# sourceMappingURL=chunk-FSFEVQLQ.js.map
